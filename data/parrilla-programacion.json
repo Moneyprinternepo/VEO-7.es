@@ -1,0 +1,47 @@
+{
+  "diasDisponibles": ["Hoy", "Mar 17", "Mié 18", "Jue 19", "Vie 20", "Sáb 21", "Dom 22"],
+  "programacion": {
+    "Hoy": [
+        { "start": "07:00", "duration": 45, "title": "Grandes construcciones", "episode": "Presas hidroeléctricas", "synopsis": "Un vistazo a cómo se construyen algunas de las presas más grandes del planeta.", "imdb": "#" },
+        { "start": "07:45", "duration": 25, "title": "Así se hace", "episode": "Guitarras eléctricas y snacks", "synopsis": "Descubre los secretos de fabricación de guitarras eléctricas y tus snacks favoritos.", "imdb": "#" },
+        { "start": "08:10", "duration": 50, "title": "Maestros de la restauración", "episode": "Un clásico americano", "synopsis": "El equipo restaura un Chevrolet Bel Air de 1957 a su antigua gloria.", "imdb": "#" },
+        { "start": "09:00", "duration": 55, "title": "Forense de la automoción", "episode": "Desastre en la carrera", "synopsis": "Investigan un fallo catastrófico de un motor en mitad de una carrera de alto riesgo.", "imdb": "#" },
+        { "start": "11:30", "duration": 15, "title": "Cinexpress", "episode": "Noticias de cine", "synopsis": "Toda la actualidad del mundo del cine, con reportajes sobre los próximos estrenos.", "imdb": "#" },
+        { "start": "11:45", "duration": 55, "title": "Alerta Cobra", "episode": "Temporada 12, Episodio 5", "synopsis": "Semir y su compañero persiguen a una banda de ladrones de coches de lujo por la autobahn.", "imdb": "#" },
+        { "start": "15:30", "duration": 127, "title": "Jurassic Park", "episode": "Película", "synopsis": "Un paleontólogo y su equipo son invitados a un parque temático de dinosaurios clonados, pero todo se descontrola.", "imdb": "https://www.imdb.com/title/tt0107290/" },
+        { "start": "17:40", "duration": 155, "title": "Gladiator", "episode": "Película", "synopsis": "Un general romano es traicionado y su familia asesinada por el corrupto hijo de un emperador.", "imdb": "https://www.imdb.com/title/tt0172495/" },
+        { "start": "20:15", "duration": 100, "title": "El Hormiguero: Avance", "episode": "Invitado especial", "synopsis": "Avance del programa de esta noche con un invitado sorpresa del mundo del cine.", "imdb": "#" },
+        { "start": "22:00", "duration": 118, "title": "El Silencio de los Corderos", "episode": "Película de Estreno", "synopsis": "Una joven agente del FBI busca la ayuda de un brillante pero peligroso asesino en serie para atrapar a otro.", "imdb": "https://www.imdb.com/title/tt0102926/" },
+        { "start": "23:58", "duration": 127, "title": "Se7en", "episode": "Película", "synopsis": "Dos detectives, uno a punto de jubilarse y otro novato, persiguen a un asesino en serie que basa sus crímenes en los siete pecados capitales.", "imdb": "https://www.imdb.com/title/tt0114369/" },
+        { "start": "02:05", "duration": 157, "title": "Zodiac", "episode": "Película", "synopsis": "Un dibujante de San Francisco se obsesiona con la caza de un asesino en serie que aterroriza el norte de California.", "imdb": "https://www.imdb.com/title/tt0443706/" }
+    ],
+    "Mar 17": [
+        { "start": "15:00", "duration": 142, "title": "Origen", "episode": "Película", "synopsis": "Dom Cobb es un ladrón capaz de adentrarse en los sueños de la gente y robarles los secretos.", "imdb": "https://www.imdb.com/title/tt1375666/" },
+        { "start": "22:00", "duration": 75, "title": "La Casa del Dragón", "episode": "Estreno T2: Un hijo por un hijo", "synopsis": "La guerra civil de los Targaryen se recrudece tras los trágicos acontecimientos de la primera temporada.", "imdb": "https://www.imdb.com/title/tt11198330/" },
+        { "start": "23:15", "duration": 129, "title": "Matrix", "episode": "Película", "synopsis": "Un programador informático descubre que el mundo es una simulación y se une a una rebelión.", "imdb": "https://www.imdb.com/title/tt0133093/" }
+    ],
+    "Mié 18": [
+        { "start": "16:00", "duration": 90, "title": "Cosmos: A Spacetime Odyssey", "episode": "Más allá de las estrellas", "synopsis": "Un viaje a través del universo para explorar galaxias lejanas y los misterios del cosmos.", "imdb": "https://www.imdb.com/title/tt2395695/" },
+        { "start": "22:00", "duration": 148, "title": "Blade Runner 2049", "episode": "Película", "synopsis": "Un nuevo blade runner descubre un secreto enterrado durante mucho tiempo que tiene el potencial de sumir en el caos lo que queda de la sociedad.", "imdb": "https://www.imdb.com/title/tt1856101/" }
+    ],
+    "Jue 19": [
+        { "start": "15:00", "duration": 156, "title": "Django Desencadenado", "episode": "Película", "synopsis": "Con la ayuda de un cazarrecompensas alemán, un esclavo liberado se dispone a rescatar a su esposa de un brutal dueño de una plantación.", "imdb": "https://www.imdb.com/title/tt1853728/" },
+        { "start": "22:00", "duration": 169, "title": "Interstellar", "episode": "Película", "synopsis": "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de asegurar la supervivencia de la humanidad.", "imdb": "https://www.imdb.com/title/tt0816692/" }
+    ],
+    "Vie 20": [
+        { "start": "17:00", "duration": 115, "title": "Resacón en Las Vegas", "episode": "Película", "synopsis": "Tres amigos se despiertan de una despedida de soltero en Las Vegas, sin recordar la noche anterior y con el novio desaparecido.", "imdb": "https://www.imdb.com/title/tt1119646/" },
+        { "start": "22:00", "duration": 113, "title": "Supersalidos", "episode": "Película", "synopsis": "Dos estudiantes de secundaria inadaptados se embarcan en una noche de aventuras para conseguir alcohol para una fiesta.", "imdb": "https://www.imdb.com/title/tt0829482/" },
+        { "start": "00:00", "duration": 100, "title": "Zombieland", "episode": "Película", "synopsis": "Un tímido estudiante intenta sobrevivir en un mundo invadido por zombis mientras se une a otros tres supervivientes.", "imdb": "https://www.imdb.com/title/tt1156398/" }
+    ],
+    "Sáb 21": [
+        { "start": "16:00", "duration": 154, "title": "Pulp Fiction", "episode": "Película Clásica", "synopsis": "Las vidas de dos sicarios, un boxeador, la esposa de un gánster y un par de bandidos se entrelazan en cuatro historias de violencia y redención.", "imdb": "https://www.imdb.com/title/tt0110912/" },
+        { "start": "18:45", "duration": 175, "title": "El Padrino", "episode": "Película Clásica", "synopsis": "El patriarca de una dinastía del crimen organizado transfiere el control de su imperio clandestino a su reacio hijo.", "imdb": "https://www.imdb.com/title/tt0068646/" },
+        { "start": "22:00", "duration": 180, "title": "Maratón \"Indiana Jones\"", "episode": "En busca del arca perdida", "synopsis": "El arqueólogo y aventurero Indiana Jones es contratado por el gobierno de EE.UU. para encontrar el Arca de la Alianza antes que los nazis.", "imdb": "https://www.imdb.com/title/tt0082971/" }
+    ],
+    "Dom 22": [
+        { "start": "16:00", "duration": 136, "title": "Spider-Man: Un nuevo universo", "episode": "Película de Animación", "synopsis": "El adolescente Miles Morales se convierte en el Spider-Man de su realidad, cruzando su camino con cinco contrapartes de otras dimensiones.", "imdb": "https://www.imdb.com/title/tt4633694/" },
+        { "start": "18:20", "duration": 148, "title": "Spider-Man: No Way Home", "episode": "Película", "synopsis": "La identidad de Spider-Man es revelada, por lo que pide ayuda al Doctor Strange. Cuando un hechizo sale mal, peligrosos enemigos de otros mundos comienzan a aparecer.", "imdb": "https://www.imdb.com/title/tt10872600/" },
+        { "start": "22:00", "duration": 149, "title": "Logan", "episode": "Película", "synopsis": "En un futuro cercano, un cansado Logan cuida de un enfermo Profesor X en un escondite en la frontera mexicana.", "imdb": "https://www.imdb.com/title/tt3315342/" }
+    ]
+  }
+}

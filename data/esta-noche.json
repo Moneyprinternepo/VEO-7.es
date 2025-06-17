@@ -1,0 +1,8 @@
+{
+  "prefijo": "Esta Noche",
+  "programas": [
+    { "titulo": "El Silencio de los Corderos", "hora": "22:00" },
+    { "titulo": "Se7en", "hora": "23:58" },
+    { "titulo": "Zodiac", "hora": "02:05" }
+  ]
+}

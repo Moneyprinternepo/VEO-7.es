@@ -1,0 +1,14 @@
+[
+  {
+    "imageUrl": "https://placehold.co/600x350/084d6e/ffffff?text=Tardes+de+Misterio",
+    "title": "Tardes de misterio",
+    "bio": "De lunes a viernes a partir de las 15:00",
+    "linkPage": "schedule"
+  },
+  {
+    "imageUrl": "https://placehold.co/600x350/c93200/ffffff?text=Maratones+Temáticos",
+    "title": "Maratones temáticos",
+    "bio": "Sábados y domingos durante todo el día",
+    "linkPage": "schedule"
+  }
+]

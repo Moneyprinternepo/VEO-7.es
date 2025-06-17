@@ -1,0 +1,54 @@
+[
+  {
+    "id": "the-boys",
+    "tag": "Nueva Temporada",
+    "title": "The Boys",
+    "bio": "En un mundo donde los superhéroes son una industria multimillonaria, un grupo de justicieros busca exponer la verdad sobre \"Los Siete\".",
+    "type": "Serie",
+    "duration": "T4: E1",
+    "genre": "Acción",
+    "imdbLink": "https://www.imdb.com/title/tt1190634/",
+    "imageUrl": "https://i.ibb.co/C5t6pfb6/2.jpg",
+    "gradientColors": ["rgba(16, 16, 16, 0.9) 20%", "rgba(16, 16, 16, 0.1) 70%"],
+    "ctaPage": "schedule"
+  },
+  {
+    "id": "origen",
+    "tag": "Estreno en VEO 7",
+    "title": "Origen",
+    "bio": "Dom Cobb es un ladrón capaz de adentrarse en los sueños de la gente y robarles los secretos de sus subconscientes.",
+    "type": "Cine",
+    "duration": "2h 28min",
+    "genre": "Ciencia Ficción",
+    "imdbLink": "https://www.imdb.com/title/tt1375666/",
+    "imageUrl": "https://i.ibb.co/h1JgQwF7/1.jpg",
+    "gradientColors": ["rgba(16, 16, 16, 0.9) 20%", "rgba(16, 16, 16, 0.1) 70%"],
+    "ctaPage": "schedule"
+  },
+  {
+    "id": "chernobyl",
+    "tag": "Maratón Fin de Semana",
+    "title": "Chernobyl",
+    "bio": "La miniserie que narra la historia del desastre nuclear de 1986 y los valientes hombres y mujeres que se sacrificaron para salvar a Europa.",
+    "type": "Miniserie",
+    "duration": "5 Episodios",
+    "genre": "Drama Histórico",
+    "imdbLink": "https://www.imdb.com/title/tt7366338/",
+    "imageUrl": "https://i.ibb.co/KpMXNkz3/3.jpg",
+    "gradientColors": ["rgba(16, 16, 16, 0.9) 20%", "rgba(16, 16, 16, 0.1) 70%"],
+    "ctaPage": "schedule"
+  },
+  {
+    "id": "dune",
+    "tag": "Ciclo de Autor",
+    "title": "Dune",
+    "bio": "Un joven brillante debe viajar al planeta más peligroso del universo para asegurar el futuro de su familia y su gente.",
+    "type": "Cine",
+    "duration": "2h 35min",
+    "genre": "Aventura",
+    "imdbLink": "https://www.imdb.com/title/tt1160419/",
+    "imageUrl": "https://i.ibb.co/tMVXFxJ2/4.jpg",
+    "gradientColors": ["rgba(16, 16, 16, 0.9) 20%", "rgba(16, 16, 16, 0.1) 70%"],
+    "ctaPage": "schedule"
+  }
+]
