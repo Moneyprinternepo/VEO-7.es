@@ -72,6 +72,8 @@ ENCABEZADO (HEADER)
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Estilos para el logo de texto original (comentados o eliminados si ya no se usan) */
+/*
 .logo {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
@@ -82,6 +84,23 @@ ENCABEZADO (HEADER)
 .logo span {
     color: var(--primary-color);
 }
+*/
+
+/* NUEVOS ESTILOS PARA EL LOGO DE IMAGEN */
+.logo-link {
+    display: inline-block; 
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    text-decoration: none; /* Asegurar que no haya subrayado del enlace */
+}
+
+.logo-image {
+    height: 45px; /* --- AJUSTA ESTA ALTURA SEGÚN NECESITES --- */
+    width: auto;  
+    display: block; 
+}
+
 
 .main-nav ul {
     display: flex;
@@ -115,7 +134,7 @@ SECCIÓN HÉROE (CARRUSEL)
 --------------------
 */
 .hero {
-    height: calc(100vh - var(--header-height)); /* Ajustar altura para descontar el header */
+    height: calc(100vh - var(--header-height)); 
     position: relative;
     overflow: hidden;
 }
@@ -180,7 +199,7 @@ SECCIÓN HÉROE (CARRUSEL)
     text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 }
 
-.hero-content p.description { /* Clase específica para la descripción */
+.hero-content p.description { 
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 25px;
@@ -268,7 +287,7 @@ BARRA "ESTA NOCHE"
     background-color: var(--primary-color);
     text-align: center;
     padding: 20px 0;
-    margin-top: -1px; /* Para solapar ligeramente con el hero si es necesario */
+    margin-top: -1px; 
 }
 
 .live-now h2 {
@@ -346,7 +365,6 @@ GUÍA DE PROGRAMACIÓN - Horizontal (Homepage)
 
 .timeline-v2 {
     position: relative;
-    /* width: 5760px;  La anchura se calculará con JS */
     height: 100%;
 }
 
@@ -386,7 +404,7 @@ GUÍA DE PROGRAMACIÓN - Horizontal (Homepage)
     white-space: normal;
     min-width: 150px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
 }
 .program-item-v2:hover {
     transform: translateY(-5px);
@@ -397,16 +415,16 @@ GUÍA DE PROGRAMACIÓN - Horizontal (Homepage)
 .program-item-v2.live {
     background-color: var(--primary-color);
     color: var(--text-light);
-    border-left-color: var(--text-light); /* Borde más visible cuando está en vivo */
+    border-left-color: var(--text-light); 
 }
 .program-item-v2 h3 {
     font-size: 1.1rem;
-    color: var(--text-light); /* Títulos siempre claros */
+    color: var(--text-light); 
     font-weight: 700;
     margin: 0;
     margin-bottom: 5px;
 }
-.program-item-v2 p { /* Episodio o info adicional */
+.program-item-v2 p { 
     font-size: 0.9rem;
     color: var(--text-secondary);
 }
@@ -419,17 +437,16 @@ GUÍA DE PROGRAMACIÓN - Horizontal (Homepage)
 GUÍA DE PROGRAMACIÓN - Vertical (Schedule Page)
 -----------------------------------
 */
-#schedule .schedule-content h2 { color: var(--text-light); } /* Especifidad para el h2 dentro de la página de schedule */
+#schedule .schedule-content h2 { color: var(--text-light); } 
 
 .day-tabs {
     display: flex;
     gap: 10px;
     margin-bottom: 30px;
     border-bottom: 1px solid var(--border-color);
-    overflow-x: auto; /* Para que sea scrolleable en móviles */
-    padding-bottom: 5px; /* Espacio para la barra de scroll sin tapar el borde */
+    overflow-x: auto; 
+    padding-bottom: 5px; 
 }
-/* Estilos para la barra de scroll en day-tabs si se desea */
 .day-tabs::-webkit-scrollbar { height: 5px; }
 .day-tabs::-webkit-scrollbar-track { background: var(--dark-bg-secondary); border-radius: 2px;}
 .day-tabs::-webkit-scrollbar-thumb { background-color: var(--primary-color); border-radius: 2px; }
@@ -445,14 +462,14 @@ GUÍA DE PROGRAMACIÓN - Vertical (Schedule Page)
     cursor: pointer;
     position: relative;
     transition: color 0.3s ease;
-    white-space: nowrap; /* Para que los nombres de los días no se partan */
+    white-space: nowrap; 
 }
 .day-tabs button:hover { color: var(--text-light); }
 .day-tabs button.active { color: var(--text-light); }
 .day-tabs button.active::after {
     content: '';
     position: absolute;
-    bottom: -1px; /* Alineado con el borde inferior */
+    bottom: -1px; 
     left: 0;
     width: 100%;
     height: 3px;
@@ -470,8 +487,8 @@ GUÍA DE PROGRAMACIÓN - Vertical (Schedule Page)
 .program-entry.is-live {
     background-color: rgba(8, 77, 110, 0.2);
     border-left: 4px solid var(--primary-color);
-    padding-left: 16px; /* Aumentar padding para que el borde no esté pegado al texto */
-    margin-left: -10px; /* Compensar el padding para alinear con el resto */
+    padding-left: 16px; 
+    margin-left: -10px; 
     margin-right: -10px;
 }
 
@@ -515,14 +532,13 @@ FICCIÓN DESTACADA (Nuevo)
     gap: 30px;
 }
 .fiction-card {
-    background-color: transparent; /* Fondo eliminado */
+    background-color: transparent; 
     cursor: pointer;
 }
 .fiction-card img {
     width: 100%;
-    height: auto; /* Mantener proporción, pero puede ser bueno fijar una altura y usar object-fit */
-    aspect-ratio: 16 / 9; /* Para mantener proporción de las imágenes */
-    object-fit: cover; /* Asegura que la imagen cubra sin deformarse */
+    aspect-ratio: 16 / 9; 
+    object-fit: cover; 
     display: block;
     border-radius: 8px;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -543,7 +559,7 @@ FICCIÓN DESTACADA (Nuevo)
 .fiction-card:hover .fiction-card-info h3 {
     color: var(--primary-color);
 }
-.fiction-card-info p { /* Para la bio/subtítulo */
+.fiction-card-info p { 
     color: var(--text-secondary);
     font-size: 1rem;
 }
@@ -629,7 +645,7 @@ DISEÑO RESPONSIVE
 */
 @media (max-width: 768px) {
     :root { --header-height: 60px; }
-    .main-nav { display: none; } /* Considerar un menú hamburguesa */
+    .main-nav { display: none; } 
     .hero-content h2 { font-size: 2.8rem; }
     .hero-content p.description { display: none; }
     .hero-meta { justify-content: center; font-size: 0.9rem; }
@@ -640,7 +656,7 @@ DISEÑO RESPONSIVE
     .live-now h2 { font-size: 1.1rem; padding: 0 15px; line-height: 1.4; }
     
     .schedule-horizontal .schedule-header,
-    #schedule .schedule-content .schedule-header { /* Especifidad para schedule page */
+    #schedule .schedule-content .schedule-header { 
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
@@ -648,7 +664,7 @@ DISEÑO RESPONSIVE
     .full-schedule-link { align-self: flex-start; }
     .program-entry { flex-direction: column; gap: 10px; }
     .program-entry.is-live {
-        padding-left: 10px; /* Ajustar padding para móvil */
+        padding-left: 10px; 
         margin-left: 0;
         margin-right: 0;
     }
@@ -658,6 +674,9 @@ DISEÑO RESPONSIVE
 }
 
  @media (max-width: 480px) {
+    .logo-image {
+        height: 35px; /* Ajustar tamaño del logo para móviles más pequeños */
+    }
     .hero-content h2 { font-size: 2.2rem; }
     .live-now h2 { font-size: 1rem; }
     .schedule-horizontal h2, #schedule .schedule-content h2 { font-size: 2rem; }
