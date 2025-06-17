@@ -72,7 +72,7 @@ ENCABEZADO (HEADER)
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Estilos para el logo de texto original (comentados o eliminados si ya no se usan) */
+/* Estilos para el logo de texto original (si los tenías, coméntalos o elimínalos) */
 /*
 .logo {
     font-family: 'Poppins', sans-serif;
@@ -88,17 +88,17 @@ ENCABEZADO (HEADER)
 
 /* NUEVOS ESTILOS PARA EL LOGO DE IMAGEN */
 .logo-link {
-    display: inline-block; 
-    height: 100%; 
-    display: flex; 
-    align-items: center; 
-    text-decoration: none; /* Asegurar que no haya subrayado del enlace */
+    display: inline-block; /* O display: flex; si necesitas más control de alineación interna */
+    height: 100%; /* Para que el contenedor del logo ocupe la altura del header */
+    display: flex; /* Ayuda a centrar la imagen verticalmente */
+    align-items: center; /* Centra la imagen verticalmente dentro del enlace */
+    text-decoration: none; /* Asegura que no haya subrayado del enlace */
 }
 
 .logo-image {
-    height: 45px; /* --- AJUSTA ESTA ALTURA SEGÚN NECESITES --- */
-    width: auto;  
-    display: block; 
+    height: 45px; /* --- AJUSTA ESTA ALTURA SEGÚN EL TAMAÑO DESEADO PARA TU LOGO --- */
+    width: auto;  /* Mantiene la proporción de la imagen al ajustar la altura */
+    display: block; /* Elimina espacio extra debajo de la imagen si fuera inline por defecto */
 }
 
 
@@ -134,7 +134,7 @@ SECCIÓN HÉROE (CARRUSEL)
 --------------------
 */
 .hero {
-    height: calc(100vh - var(--header-height)); 
+    height: calc(100vh - var(--header-height)); /* Ajustar altura para descontar el header */
     position: relative;
     overflow: hidden;
 }
@@ -199,7 +199,7 @@ SECCIÓN HÉROE (CARRUSEL)
     text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 }
 
-.hero-content p.description { 
+.hero-content p.description { /* Clase específica para la descripción */
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 25px;
@@ -287,7 +287,7 @@ BARRA "ESTA NOCHE"
     background-color: var(--primary-color);
     text-align: center;
     padding: 20px 0;
-    margin-top: -1px; 
+    margin-top: -1px; /* Para solapar ligeramente con el hero si es necesario */
 }
 
 .live-now h2 {
@@ -365,6 +365,7 @@ GUÍA DE PROGRAMACIÓN - Horizontal (Homepage)
 
 .timeline-v2 {
     position: relative;
+    /* width: 5760px;  La anchura se calculará con JS */
     height: 100%;
 }
 
@@ -404,7 +405,7 @@ GUÍA DE PROGRAMACIÓN - Horizontal (Homepage)
     white-space: normal;
     min-width: 150px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
 }
 .program-item-v2:hover {
     transform: translateY(-5px);
@@ -415,16 +416,16 @@ GUÍA DE PROGRAMACIÓN - Horizontal (Homepage)
 .program-item-v2.live {
     background-color: var(--primary-color);
     color: var(--text-light);
-    border-left-color: var(--text-light); 
+    border-left-color: var(--text-light); /* Borde más visible cuando está en vivo */
 }
 .program-item-v2 h3 {
     font-size: 1.1rem;
-    color: var(--text-light); 
+    color: var(--text-light); /* Títulos siempre claros */
     font-weight: 700;
     margin: 0;
     margin-bottom: 5px;
 }
-.program-item-v2 p { 
+.program-item-v2 p { /* Episodio o info adicional */
     font-size: 0.9rem;
     color: var(--text-secondary);
 }
@@ -437,16 +438,17 @@ GUÍA DE PROGRAMACIÓN - Horizontal (Homepage)
 GUÍA DE PROGRAMACIÓN - Vertical (Schedule Page)
 -----------------------------------
 */
-#schedule .schedule-content h2 { color: var(--text-light); } 
+#schedule .schedule-content h2 { color: var(--text-light); } /* Especifidad para el h2 dentro de la página de schedule */
 
 .day-tabs {
     display: flex;
     gap: 10px;
     margin-bottom: 30px;
     border-bottom: 1px solid var(--border-color);
-    overflow-x: auto; 
-    padding-bottom: 5px; 
+    overflow-x: auto; /* Para que sea scrolleable en móviles */
+    padding-bottom: 5px; /* Espacio para la barra de scroll sin tapar el borde */
 }
+/* Estilos para la barra de scroll en day-tabs si se desea */
 .day-tabs::-webkit-scrollbar { height: 5px; }
 .day-tabs::-webkit-scrollbar-track { background: var(--dark-bg-secondary); border-radius: 2px;}
 .day-tabs::-webkit-scrollbar-thumb { background-color: var(--primary-color); border-radius: 2px; }
@@ -462,14 +464,14 @@ GUÍA DE PROGRAMACIÓN - Vertical (Schedule Page)
     cursor: pointer;
     position: relative;
     transition: color 0.3s ease;
-    white-space: nowrap; 
+    white-space: nowrap; /* Para que los nombres de los días no se partan */
 }
 .day-tabs button:hover { color: var(--text-light); }
 .day-tabs button.active { color: var(--text-light); }
 .day-tabs button.active::after {
     content: '';
     position: absolute;
-    bottom: -1px; 
+    bottom: -1px; /* Alineado con el borde inferior */
     left: 0;
     width: 100%;
     height: 3px;
@@ -487,8 +489,8 @@ GUÍA DE PROGRAMACIÓN - Vertical (Schedule Page)
 .program-entry.is-live {
     background-color: rgba(8, 77, 110, 0.2);
     border-left: 4px solid var(--primary-color);
-    padding-left: 16px; 
-    margin-left: -10px; 
+    padding-left: 16px; /* Aumentar padding para que el borde no esté pegado al texto */
+    margin-left: -10px; /* Compensar el padding para alinear con el resto */
     margin-right: -10px;
 }
 
@@ -532,13 +534,14 @@ FICCIÓN DESTACADA (Nuevo)
     gap: 30px;
 }
 .fiction-card {
-    background-color: transparent; 
+    background-color: transparent; /* Fondo eliminado */
     cursor: pointer;
 }
 .fiction-card img {
     width: 100%;
-    aspect-ratio: 16 / 9; 
-    object-fit: cover; 
+    height: auto; /* Mantener proporción, pero puede ser bueno fijar una altura y usar object-fit */
+    aspect-ratio: 16 / 9; /* Para mantener proporción de las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra sin deformarse */
     display: block;
     border-radius: 8px;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -559,7 +562,7 @@ FICCIÓN DESTACADA (Nuevo)
 .fiction-card:hover .fiction-card-info h3 {
     color: var(--primary-color);
 }
-.fiction-card-info p { 
+.fiction-card-info p { /* Para la bio/subtítulo */
     color: var(--text-secondary);
     font-size: 1rem;
 }
@@ -645,7 +648,7 @@ DISEÑO RESPONSIVE
 */
 @media (max-width: 768px) {
     :root { --header-height: 60px; }
-    .main-nav { display: none; } 
+    .main-nav { display: none; } /* Considerar un menú hamburguesa */
     .hero-content h2 { font-size: 2.8rem; }
     .hero-content p.description { display: none; }
     .hero-meta { justify-content: center; font-size: 0.9rem; }
@@ -656,7 +659,7 @@ DISEÑO RESPONSIVE
     .live-now h2 { font-size: 1.1rem; padding: 0 15px; line-height: 1.4; }
     
     .schedule-horizontal .schedule-header,
-    #schedule .schedule-content .schedule-header { 
+    #schedule .schedule-content .schedule-header { /* Especifidad para schedule page */
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
@@ -664,7 +667,7 @@ DISEÑO RESPONSIVE
     .full-schedule-link { align-self: flex-start; }
     .program-entry { flex-direction: column; gap: 10px; }
     .program-entry.is-live {
-        padding-left: 10px; 
+        padding-left: 10px; /* Ajustar padding para móvil */
         margin-left: 0;
         margin-right: 0;
     }
