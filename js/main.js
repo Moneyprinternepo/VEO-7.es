@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Selectores del DOM
-    // (Sin cambios aquí)
     const appContainer = document.getElementById('app-container');
     const pages = document.querySelectorAll('.page');
     const navLinks = document.querySelectorAll('[data-page]');
@@ -19,131 +18,149 @@ document.addEventListener('DOMContentLoaded', function() {
     const dayTabsFullContainer = document.getElementById('day-tabs-full');
     const scheduleListVerticalContainer = document.getElementById('schedule-list-v3');
 
-
-    // --- DATOS JSON INCRUSTADOS DIRECTAMENTE (CORREGIDOS) ---
-    const datosHero = [
-      {
-        "id": "vidas-criminales",
-        "tag": "Miércoles 18 - 22:30",
-        "title": "Vidas Criminales",
-        "bio": "Dos delincuentes comunes obtienen más de lo que esperaban después de secuestrar a la esposa de un desarrollador inmobiliario corrupto que no muestra interés en pagar el rescate de 1 millón de dólares por su regreso seguro.",
-        "type": "Cine",
-        "duration": "1h 38m",
-        "genre": "Comedia/Crimen",
-        "imdbLink": "https://www.imdb.com/es-es/title/tt1663207/",
-        "imageUrl": "https://i.ibb.co/C5t6pfb6/2.jpg", // URL de ejemplo, asegúrate que sea válida
-        "gradientColors": ["rgba(16, 16, 16, 0.9) 20%", "rgba(16, 16, 16, 0.1) 70%"],
-        "ctaPage": "schedule"
-      },
-      {
-        "id": "pixie",
-        "tag": "Miércoles 18 - 20:30",
-        "title": "Pixie",
-        "bio": "Para vengar la muerte de su madre, Pixie planea un atraco, pero debe huir a través de Irlanda de los gánsteres, enfrentarse al patriarcado y elegir su propio destino.",
-        "type": "Cine",
-        "duration": "1h 33m",
-        "genre": "Comedia Negra",
-        "imdbLink": "https://www.imdb.com/es-es/title/tt10831086/",
-        "imageUrl": "https://i.ibb.co/h1JgQwF7/1.jpg", // URL de ejemplo
-        "gradientColors": ["rgba(16, 16, 16, 0.9) 20%", "rgba(16, 16, 16, 0.1) 70%"],
-        "ctaPage": "schedule"
-      },
-      {
-        "id": "crimenes-del-futuro",
-        "tag": "Domingo 22- 23:50",
-        "title": "Crímenes del futuro",
-        "bio": "La especie humana evoluciona y se adapta a un entorno sintético, el cuerpo es sometido a nuevas transformaciones y mutaciones. El artista Saul exhibe las metamorfósis de sus órganos en performances de vanguardia.",
-        "type": "Cine",
-        "duration": "1h 47m",
-        "genre": "Sci-Fi/Horror",
-        "imdbLink": "https://www.imdb.com/es-es/title/tt14549466/",
-        "imageUrl": "https://i.ibb.co/KpMXNkz3/3.jpg", // URL de ejemplo
-        "gradientColors": ["rgba(16, 16, 16, 0.9) 20%", "rgba(16, 16, 16, 0.1) 70%"],
-        "ctaPage": "schedule"
-      },
-      {
-        "id": "plan-a",
-        "tag": "Jueves 19 - 23:45",
-        "title": "Plan A",
-        "bio": "En 1945, un grupo de sobrevivientes judíos del Holocausto planeó envenenar el sistema de agua en Alemania. La película narra la peligrosa y atrevida operación encubierta que se llamó Plan A.",
-        "type": "Cine",
-        "duration": "1h 49m",
-        "genre": "Drama histórico",
-        "imdbLink": "https://www.imdb.com/es-es/title/tt5448338/",
-        "imageUrl": "https://i.ibb.co/tMVXFxJ2/4.jpg", // URL de ejemplo
-        "gradientColors": ["rgba(16, 16, 16, 0.9) 20%", "rgba(16, 16, 16, 0.1) 70%"],
-        "ctaPage": "schedule"
-      }
-    ];
-
-    const datosEstaNoche = {
-      "prefijo": "Esta Noche",
-      "programas": [
-        { "titulo": "Pixie", "hora": "20:30" },
-        { "titulo": "Vidas Criminales", "hora": "22:15" },
-        { "titulo": "Cop Secreto", "hora": "23:45" }
-      ]
-    };
-
-    const datosParrilla = {
-      "diasDisponibles": ["Hoy", "Jue 19", "Vie 20", "Sáb 21", "Dom 22"], // Eliminado Mar 17 y Mie 18 que no tenían datos en tu JSON
-      "programacion": {
-        "Hoy": [
-            { "start": "09:00", "duration": 315, "title": "Vigilantes de la playa", "episode": "S1 Ep 1-9", "synopsis": "En una playa de Los Ángeles, un equipo de socorristas, liderado por el teniente Mitch Buchannon, salva vidas, lidia con dramas personales, lucha contra el crimen y participa en aventuras a diario.", "imdb": "https://www.imdb.com/es-es/title/tt0096542/" },
-            { "start": "16:30", "duration": 240, "title": "Flashpoint", "episode": "S1 Ep 1-5", "synopsis": "La Unidad de Respuesta Estratégica es un grupo que forma parte de la élite policial. Ellos se encargan de resolver aquellas situaciones extremas de las que la policía no puede hacerse cargo.", "imdb": "https://www.imdb.com/es-es/title/tt1059475/" },
-            { "start": "20:30", "duration": 93, "title": "Pixie", "episode": "Cine", "synopsis": "Para vengar la muerte de su madre, Pixie planea un atraco, pero debe huir a través de Irlanda de los gánsteres, enfrentarse al patriarcado y elegir su propio destino.", "imdb": "https://www.imdb.com/es-es/title/tt10831086/" },
-            { "start": "22:15", "duration": 98, "title": "Vidas Criminales", "episode": "Cine", "synopsis": "Dos delincuentes comunes obtienen más de lo que esperaban después de secuestrar a la esposa de un desarrollador inmobiliario corrupto que no muestra interés en pagar el rescate de 1 millón de dólares por su regreso seguro.", "imdb": "https://www.imdb.com/es-es/title/tt1663207/" },
-            { "start": "23:45", "duration": 98, "title": "Cop Secret", "episode": "Cine", "synopsis": "El policía más duro de Islandia no se detendrá ante nada para resolver una serie de violentos robos a bancos. Pero las presiones de resolver el caso resultan demasiado para el duro renegado.", "imdb": "https://www.imdb.com/es-es/title/tt13882736/" },
-            { "start": "01:15", "duration": 60, "title": "Teletienda", "episode": "-", "synopsis": "-", "imdb": "#" } // Duración asignada (ej. 60 min)
-        ],
-        // Eliminé "Mar 17" y "Mié 18" de aquí porque no estaban en tu último `datosParrilla`.
-        // Si los necesitas, asegúrate que las duraciones estén en minutos.
-        "Jue 19": [
-            { "start": "15:00", "duration": 156, "title": "Django Desencadenado", "episode": "Película", "synopsis": "Con la ayuda de un cazarrecompensas alemán, un esclavo liberado se dispone a rescatar a su esposa de un brutal dueño de una plantación.", "imdb": "https://www.imdb.com/title/tt1853728/" },
-            { "start": "22:00", "duration": 169, "title": "Interstellar", "episode": "Película", "synopsis": "Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento de asegurar la supervivencia de la humanidad.", "imdb": "https://www.imdb.com/title/tt0816692/" }
-        ],
-        "Vie 20": [
-            { "start": "17:00", "duration": 115, "title": "Resacón en Las Vegas", "episode": "Película", "synopsis": "Tres amigos se despiertan de una despedida de soltero en Las Vegas, sin recordar la noche anterior y con el novio desaparecido.", "imdb": "https://www.imdb.com/title/tt1119646/" },
-            { "start": "22:00", "duration": 113, "title": "Supersalidos", "episode": "Película", "synopsis": "Dos estudiantes de secundaria inadaptados se embarcan en una noche de aventuras para conseguir alcohol para una fiesta.", "imdb": "https://www.imdb.com/title/tt0829482/" },
-            { "start": "00:00", "duration": 100, "title": "Zombieland", "episode": "Película", "synopsis": "Un tímido estudiante intenta sobrevivir en un mundo invadido por zombis mientras se une a otros tres supervivientes.", "imdb": "https://www.imdb.com/title/tt1156398/" }
-        ],
-        "Sáb 21": [
-            { "start": "16:00", "duration": 154, "title": "Pulp Fiction", "episode": "Película Clásica", "synopsis": "Las vidas de dos sicarios, un boxeador, la esposa de un gánster y un par de bandidos se entrelazan en cuatro historias de violencia y redención.", "imdb": "https://www.imdb.com/title/tt0110912/" },
-            { "start": "18:45", "duration": 175, "title": "El Padrino", "episode": "Película Clásica", "synopsis": "El patriarca de una dinastía del crimen organizado transfiere el control de su imperio clandestino a su reacio hijo.", "imdb": "https://www.imdb.com/title/tt0068646/" },
-            { "start": "22:00", "duration": 180, "title": "Maratón \"Indiana Jones\"", "episode": "En busca del arca perdida", "synopsis": "El arqueólogo y aventurero Indiana Jones es contratado por el gobierno de EE.UU. para encontrar el Arca de la Alianza antes que los nazis.", "imdb": "https://www.imdb.com/title/tt0082971/" }
-        ],
-        "Dom 22": [ // No había coma aquí, lo cual es correcto si es el último.
-            { "start": "16:00", "duration": 136, "title": "Spider-Man: Un nuevo universo", "episode": "Película de Animación", "synopsis": "El adolescente Miles Morales se convierte en el Spider-Man de su realidad, cruzando su camino con cinco contrapartes de otras dimensiones.", "imdb": "https://www.imdb.com/title/tt4633694/" },
-            { "start": "18:20", "duration": 148, "title": "Spider-Man: No Way Home", "episode": "Película", "synopsis": "La identidad de Spider-Man es revelada, por lo que pide ayuda al Doctor Strange. Cuando un hechizo sale mal, peligrosos enemigos de otros mundos comienzan a aparecer.", "imdb": "https://www.imdb.com/title/tt10872600/" },
-            { "start": "22:00", "duration": 149, "title": "Logan", "episode": "Película", "synopsis": "En un futuro cercano, un cansado Logan cuida de un enfermo Profesor X en un escondite en la frontera mexicana.", "imdb": "https://www.imdb.com/title/tt3315342/" }
-        ] // Sin coma aquí porque es el final del objeto "programacion"
-      }
-    };
-
-    const datosDestacados = [
-      {
-        "imageUrl": "https://i.ibb.co/nsng2dTW/1.jpg", // CORREGIDO: Solo la URL de la imagen
-        "title": "Maratón de series",
-        "bio": "De lunes a viernes a partir de las 09:00",
-        "linkPage": "schedule"
-      },
-      {
-        "imageUrl": "https://i.ibb.co/q3XFS8ky/2.jpg", // CORREGIDO: Solo la URL de la imagen
-        "title": "El mejor cine",
-        "bio": "3 películas, todos los días, a partir de las 20:30",
-        "linkPage": "schedule"
-      }
-    ];
+    // --- DATOS JSON ELIMINADOS ---
+    // Ya no se usan las variables datosHero, datosEstaNoche, datosParrilla, datosDestacados aquí
 
     // Variables de estado
     let currentHeroSlide = 0;
     let heroAutoSlideInterval;
 
+    // --- FUNCIÓN DE PARSEO DE CSV ---
+    function parseCSV(csvText, delimiter = ';') {
+        // Eliminar BOM (Byte Order Mark) si está presente
+        if (csvText.charCodeAt(0) === 0xFEFF) {
+            csvText = csvText.substring(1);
+        }
 
-    // --- FUNCIONES DE RENDERIZADO ---
-    function renderizarHero() {
-        if (!heroSliderElement || !heroDotsContainer || !datosHero.length) {
+        const lines = csvText.trim().split('\n');
+        if (lines.length === 0) return [];
+
+        const headers = lines[0].split(delimiter).map(header => header.trim().toLowerCase());
+        const data = [];
+
+        for (let i = 1; i < lines.length; i++) {
+            const line = lines[i].trim();
+            if (line === "") continue;
+
+            const values = line.split(delimiter);
+            const entry = {};
+            
+            headers.forEach((header, index) => {
+                let value = values[index] || ""; // Asegurar que haya un valor, incluso si la línea es corta
+
+                // Eliminar comillas dobles si rodean el valor
+                if (value.startsWith('"') && value.endsWith('"')) {
+                    value = value.substring(1, value.length - 1);
+                }
+                // Reemplazar comillas dobles escapadas ("") por una comilla doble (")
+                value = value.replace(/""/g, '"');
+                entry[header] = value.trim();
+            });
+            data.push(entry);
+        }
+        return data;
+    }
+
+    async function fetchCSV(filePath, delimiter = ';') {
+        try {
+            const response = await fetch(filePath);
+            if (!response.ok) {
+                throw new Error(`Error al cargar ${filePath}: ${response.statusText}`);
+            }
+            const csvText = await response.text();
+            return parseCSV(csvText, delimiter);
+        } catch (error) {
+            console.error(`Fallo al obtener o parsear ${filePath}:`, error);
+            return []; // Devolver array vacío en caso de error para no romper Promise.all
+        }
+    }
+
+    // --- FUNCIONES DE TRANSFORMACIÓN DE DATOS CSV A ESTRUCTURA ORIGINAL ---
+    function transformarDatosHero(csvData) {
+        return csvData.map(item => ({
+            id: item.id,
+            tag: item.tag,
+            title: item.title,
+            bio: item.bio,
+            type: item.type,
+            duration: item.duration,
+            genre: item.genre,
+            imdbLink: item.imbdlink, // Nótese el cambio de 'imdbLink' a 'imbdlink' según CSV
+            imageUrl: item.imageurl,
+            gradientColors: item.gradientcolors ? item.gradientcolors.split(';') : ["rgba(16, 16, 16, 0.9) 20%", "rgba(16, 16, 16, 0.1) 70%"],
+            ctaPage: item.ctapage
+        }));
+    }
+
+    function transformarDatosEstaNoche(csvData) {
+        if (!csvData || csvData.length === 0) {
+            return { prefijo: "Esta Noche", programas: [] };
+        }
+        return {
+            prefijo: csvData[0].prefijo,
+            programas: csvData.map(item => ({
+                titulo: item.titulo,
+                hora: item.hora
+            }))
+        };
+    }
+
+    function transformarDatosParrilla(csvData) {
+        const programacion = {};
+        const diasSet = new Set();
+
+        csvData.forEach(item => {
+            if (!item.diakey || !item.start || !item.duration || !item.title) {
+                console.warn("Fila de parrilla incompleta, saltando:", item);
+                return;
+            }
+            const dia = item.diakey;
+            if (!programacion[dia]) {
+                programacion[dia] = [];
+            }
+            diasSet.add(dia);
+            programacion[dia].push({
+                start: item.start,
+                duration: parseInt(item.duration, 10), // Convertir a número
+                title: item.title,
+                episode: item.episode,
+                synopsis: item.synopsis,
+                imdb: item.imdb
+            });
+        });
+        
+        // Ordenar los días como en el JSON original (Hoy primero, luego los demás)
+        const ordenPreferido = ["Hoy", "Jue 19", "Vie 20", "Sáb 21", "Dom 22"];
+        const diasDisponibles = Array.from(diasSet).sort((a, b) => {
+            const indexA = ordenPreferido.indexOf(a);
+            const indexB = ordenPreferido.indexOf(b);
+            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+            if (indexA !== -1) return -1;
+            if (indexB !== -1) return 1;
+            // Si no están en la lista de orden, se pueden ordenar alfabéticamente o por aparición
+            return a.localeCompare(b); 
+        });
+
+
+        return { diasDisponibles, programacion };
+    }
+
+    function transformarDatosDestacados(csvData) {
+        return csvData.map(item => ({
+            imageUrl: item.imageurl,
+            title: item.title,
+            bio: item.bio,
+            linkPage: item.linkpage
+        }));
+    }
+
+
+    // --- FUNCIONES DE RENDERIZADO (sin cambios en la lógica interna, solo cómo reciben los datos) ---
+    function renderizarHero(datosHero) { // Ahora recibe datosHero como argumento
+        if (!heroSliderElement || !heroDotsContainer || !datosHero || !datosHero.length) {
             console.warn("Hero slider o datos no encontrados/vacíos.");
+            if (heroSliderElement) heroSliderElement.innerHTML = '<p style="text-align:center; padding: 50px; color: var(--text-secondary);">No hay películas destacadas en este momento.</p>';
+            if (heroDotsContainer) heroDotsContainer.innerHTML = '';
             return;
         }
         heroSliderElement.innerHTML = '';
@@ -152,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
         datosHero.forEach((pelicula, index) => {
             const slide = document.createElement('div');
             slide.classList.add('hero-slide');
-            // Asegurarse que gradientColors exista y tenga al menos dos elementos
             const gradCol1 = pelicula.gradientColors && pelicula.gradientColors.length > 0 ? pelicula.gradientColors[0] : 'rgba(16, 16, 16, 0.9) 20%';
             const gradCol2 = pelicula.gradientColors && pelicula.gradientColors.length > 1 ? pelicula.gradientColors[1] : 'rgba(16, 16, 16, 0.1) 70%';
             const gradient = `linear-gradient(to right, ${gradCol1}, ${gradCol2})`;
@@ -181,11 +197,11 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.addEventListener('click', () => { setHeroSlideManual(index); });
             heroDotsContainer.appendChild(dot);
         });
-        configurarHeroSlider();
+        configurarHeroSlider(datosHero); // Pasar datosHero
     }
 
-    function renderizarEstaNoche() {
-        if (!liveNowTextElement || !datosEstaNoche.programas || !datosEstaNoche.programas.length) {
+    function renderizarEstaNoche(datosEstaNoche) { // Ahora recibe datosEstaNoche
+        if (!liveNowTextElement || !datosEstaNoche || !datosEstaNoche.programas || !datosEstaNoche.programas.length) {
              if(liveNowTextElement) liveNowTextElement.textContent = "Información no disponible.";
             return;
         }
@@ -193,9 +209,10 @@ document.addEventListener('DOMContentLoaded', function() {
         liveNowTextElement.textContent = `${datosEstaNoche.prefijo || "Esta Noche"}: ${titulos}`;
     }
 
-    function renderizarParrillaHorizontal() {
-        if (!programBlocksHomeContainer || !timeMarkersHomeContainer || !timelineElementHome || !datosParrilla.programacion || !datosParrilla.programacion['Hoy']) {
+    function renderizarParrillaHorizontal(datosParrilla) { // Ahora recibe datosParrilla
+        if (!programBlocksHomeContainer || !timeMarkersHomeContainer || !timelineElementHome || !datosParrilla || !datosParrilla.programacion || !datosParrilla.programacion['Hoy']) {
             console.warn("Parrilla Horizontal: Elementos DOM o datos de 'Hoy' no encontrados.");
+             if (programBlocksHomeContainer) programBlocksHomeContainer.innerHTML = '<p style="padding: 20px; text-align: center; color: var(--text-secondary);">No hay programación para hoy.</p>';
             return;
         }
     
@@ -204,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         const PIXELS_PER_MINUTE_HORIZONTAL = 4;
         const TIMELINE_START_HOUR_HORIZONTAL = 7; 
-        const TIMELINE_TOTAL_HOURS_HORIZONTAL = 22; // Cubre de 7:00 AM a 5:00 AM del día siguiente
+        const TIMELINE_TOTAL_HOURS_HORIZONTAL = 22; 
     
         timelineElementHome.style.width = `${TIMELINE_TOTAL_HOURS_HORIZONTAL * 60 * PIXELS_PER_MINUTE_HORIZONTAL}px`;
     
@@ -229,12 +246,12 @@ document.addEventListener('DOMContentLoaded', function() {
         programasHoy.forEach(program => {
             if (typeof program.duration !== 'number' || isNaN(program.duration)) {
                 console.error(`Parrilla Horizontal: Duración inválida para "${program.title}":`, program.duration);
-                return; // Saltar este programa si la duración no es un número
+                return; 
             }
 
             let [hour, minute] = program.start.split(':').map(Number);
             let effectiveHour = hour;
-            if (hour < TIMELINE_START_HOUR_HORIZONTAL) { // Para programas después de medianoche, ej. 01:15
+            if (hour < TIMELINE_START_HOUR_HORIZONTAL) {
                  effectiveHour = hour + 24; 
             }
 
@@ -250,11 +267,8 @@ document.addEventListener('DOMContentLoaded', function() {
             block.innerHTML = `<h3>${program.title}</h3><p>${program.episode || ''}</p>`; 
             
             const now = new Date();
-            const currentDayDate = now.toDateString(); // Formato "Wed Jul 24 2024"
-
-            // La lógica 'is-live' solo aplica si el día que estamos viendo es el día actual real
-            // Asumiendo que 'Hoy' en los datos siempre se refiere al día en que se carga la página
-            const programDate = new Date(); // Asumimos que los programas de 'Hoy' son para el día actual
+            const currentDayDate = now.toDateString(); 
+            const programDate = new Date(); 
             programDate.setHours(hour, minute, 0, 0);
 
             const programStartTotalMinutesToday = hour * 60 + minute;
@@ -270,9 +284,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function renderizarFiccionDestacada() {
-        if (!fictionGridContainer || !datosDestacados.length) {
+    function renderizarFiccionDestacada(datosDestacados) { // Ahora recibe datosDestacados
+        if (!fictionGridContainer || !datosDestacados || !datosDestacados.length) {
             console.warn("Ficción Destacada: Contenedor o datos no encontrados/vacíos.");
+            if(fictionGridContainer) fictionGridContainer.innerHTML = '<p style="text-align:center; padding: 20px; color: var(--text-secondary);">No hay ficción destacada.</p>';
             return;
         }
         fictionGridContainer.innerHTML = '';
@@ -298,18 +313,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function renderizarParrillaVertical(diaKey) {
-        if (!scheduleListVerticalContainer || !datosParrilla.programacion || !datosParrilla.programacion[diaKey]) {
+    function renderizarParrillaVertical(diaKey, datosParrilla) { // Ahora recibe datosParrilla
+        if (!scheduleListVerticalContainer || !datosParrilla || !datosParrilla.programacion || !datosParrilla.programacion[diaKey]) {
             if(scheduleListVerticalContainer) scheduleListVerticalContainer.innerHTML = '<p style="padding: 20px; text-align: center; color: var(--text-secondary);">No hay programación disponible para este día.</p>';
+            console.warn(`Parrilla Vertical: No hay datos para el día "${diaKey}"`);
             return;
         }
         scheduleListVerticalContainer.innerHTML = '';
         const scheduleData = datosParrilla.programacion[diaKey];
         const now = new Date();
         const nowTotalMinutes = now.getHours() * 60 + now.getMinutes();
-        const currentDayName = datosParrilla.diasDisponibles[now.getDay()]; // Esto es una aproximación, necesitarías mapear getDay() a tus nombres de día.
-                                                                        // O mejor, si diaKey es "Hoy", comparar con el día actual.
-
+        
         scheduleData.forEach(program => {
             if (typeof program.duration !== 'number' || isNaN(program.duration)) {
                 console.error(`Parrilla Vertical: Duración inválida para "${program.title}" en día "${diaKey}":`, program.duration);
@@ -322,10 +336,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const programStartTotalMinutes = startHour * 60 + startMinute;
             const programEndTotalMinutes = programStartTotalMinutes + program.duration;
 
-            // Lógica is-live: solo si es "Hoy" Y la fecha actual coincide con el día de "Hoy"
-            // (Asumimos que "Hoy" en los datos se refiere al día en que se carga la página)
-            if (diaKey === 'Hoy' && (new Date().toDateString() === new Date().toDateString()) &&
-                nowTotalMinutes >= programStartTotalMinutes && nowTotalMinutes < programEndTotalMinutes) {
+            // Para la lógica 'is-live', 'Hoy' en los datos debe referirse al día actual real.
+            const esHoyReal = (diaKey === "Hoy" && (new Date().toDateString() === new Date().toDateString()));
+            if (esHoyReal && nowTotalMinutes >= programStartTotalMinutes && nowTotalMinutes < programEndTotalMinutes) {
                 entry.classList.add('is-live');
             }
 
@@ -344,32 +357,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function configurarTabsParrillaVertical() {
-        if (!dayTabsFullContainer || !datosParrilla.diasDisponibles || datosParrilla.diasDisponibles.length === 0) {
+    function configurarTabsParrillaVertical(datosParrilla) { // Ahora recibe datosParrilla
+        if (!dayTabsFullContainer || !datosParrilla || !datosParrilla.diasDisponibles || datosParrilla.diasDisponibles.length === 0) {
             console.warn("Tabs Parrilla Vertical: Contenedor o diasDisponibles no encontrados/vacíos.");
             if(dayTabsFullContainer) dayTabsFullContainer.innerHTML = '';
+            if(scheduleListVerticalContainer) scheduleListVerticalContainer.innerHTML = '<p style="padding: 20px; text-align: center; color: var(--text-secondary);">No hay programación disponible.</p>';
             return;
         }
         dayTabsFullContainer.innerHTML = '';
         datosParrilla.diasDisponibles.forEach((diaKey, index) => {
             const tabButton = document.createElement('button');
             tabButton.textContent = diaKey;
-            if (index === 0) tabButton.classList.add('active'); // Activa el primer tab por defecto
+            if (index === 0) tabButton.classList.add('active'); 
             tabButton.addEventListener('click', () => {
                 const currentActive = dayTabsFullContainer.querySelector('.active');
                 if (currentActive) currentActive.classList.remove('active');
                 tabButton.classList.add('active');
-                renderizarParrillaVertical(diaKey);
+                renderizarParrillaVertical(diaKey, datosParrilla);
             });
             dayTabsFullContainer.appendChild(tabButton);
         });
-        // Renderizar el primer día por defecto si hay días disponibles
         if (datosParrilla.diasDisponibles.length > 0) {
-            renderizarParrillaVertical(datosParrilla.diasDisponibles[0]); 
+            renderizarParrillaVertical(datosParrilla.diasDisponibles[0], datosParrilla); 
         }
     }
 
-    // --- LÓGICA DE COMPONENTES Y NAVEGACIÓN ---
+    // --- LÓGICA DE COMPONENTES Y NAVEGACIÓN (Mayormente sin cambios) ---
     function navigateTo(pageId) {
         pages.forEach(page => page.classList.remove('active'));
         const nextPage = document.getElementById(pageId);
@@ -394,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        const logoElement = document.querySelector('.logo[data-page="home"]');
+        const logoElement = document.querySelector('.logo-link[data-page="home"]'); // Actualizado selector
         if(logoElement) {
             logoElement.addEventListener('click', (event) => {
                  event.preventDefault();
@@ -411,17 +424,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function configurarHeroSlider() {
-        if (!heroSliderElement) return;
-        const slides = heroSliderElement.querySelectorAll('.hero-slide');
-        const dots = heroDotsContainer.querySelectorAll('.dot');
-        if (slides.length === 0) {
-            // Si no hay slides (quizás porque datosHero estaba vacío), no hacer nada.
-            // O podrías mostrar un mensaje de "No hay destacados" en heroSliderElement.
-            heroSliderElement.innerHTML = '<p style="text-align:center; padding: 50px; color: var(--text-secondary);">No hay películas destacadas en este momento.</p>';
+    function configurarHeroSlider(datosHero) { // Ahora recibe datosHero
+        if (!heroSliderElement || !datosHero || datosHero.length === 0) { // Comprobar datosHero
+             if (heroSliderElement) heroSliderElement.innerHTML = '<p style="text-align:center; padding: 50px; color: var(--text-secondary);">No hay películas destacadas en este momento.</p>';
             if(heroDotsContainer) heroDotsContainer.innerHTML = '';
             return;
         }
+        const slides = heroSliderElement.querySelectorAll('.hero-slide');
+        const dots = heroDotsContainer.querySelectorAll('.dot');
+        
+        if (slides.length === 0) return;
 
 
         function updateHeroSlideDisplay() {
@@ -462,7 +474,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         clearInterval(heroAutoSlideInterval);
         currentHeroSlide = index;
-        configurarHeroSlider(); // Llama a configurar de nuevo para actualizar UI y reiniciar intervalo
+        
+        // Re-llamar a configurarHeroSlider no es necesario aquí si solo actualizamos
+        // el display. Si se quisiera reiniciar el intervalo con datos frescos (que no cambian aquí):
+        // configurarHeroSlider(aqui_necesitarias_pasar_datos_hero_globales_o_recargarlos);
+        // Por ahora, solo actualizamos el display y el intervalo se reiniciará en la próxima llamada natural.
+        // O mejor:
+        const dots = heroDotsContainer.querySelectorAll('.dot');
+        slides.forEach((s, i) => s.classList.toggle('active', i === currentHeroSlide));
+        if (dots.length > 0) {
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentHeroSlide));
+        }
+        // Reiniciar el intervalo
+        if (heroAutoSlideInterval) clearInterval(heroAutoSlideInterval);
+        heroAutoSlideInterval = setInterval(() => {
+            currentHeroSlide = (currentHeroSlide + 1) % slides.length;
+            slides.forEach((s, i) => s.classList.toggle('active', i === currentHeroSlide));
+            if (dots.length > 0) {
+                 dots.forEach((d, i) => d.classList.toggle('active', i === currentHeroSlide));
+            }
+        }, 5600);
     }
 
 
@@ -478,30 +509,59 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- INICIALIZACIÓN DE LA UI ---
-    function inicializarUI() {
-        // Renderizar condicionalmente y con logs para debugging
-        if (datosHero && datosHero.length > 0) renderizarHero(); 
-        else console.warn("Datos del Hero vacíos o no definidos.");
+    async function inicializarUI() {
+        try {
+            // Cargar todos los datos CSV en paralelo
+            const [
+                heroCsvData,
+                estaNocheCsvData,
+                parrillaCsvData,
+                destacadosCsvData
+            ] = await Promise.all([
+                fetchCSV('data/hero.csv'),
+                fetchCSV('data/esta_noche.csv'),
+                fetchCSV('data/parrilla.csv'),
+                fetchCSV('data/destacados.csv')
+            ]);
 
-        if (datosEstaNoche && Object.keys(datosEstaNoche).length > 0 && datosEstaNoche.programas) renderizarEstaNoche(); 
-        else console.warn("Datos de Esta Noche vacíos, no definidos o sin 'programas'.");
+            // Transformar los datos CSV a la estructura JS esperada
+            const datosHero = transformarDatosHero(heroCsvData);
+            const datosEstaNoche = transformarDatosEstaNoche(estaNocheCsvData);
+            const datosParrilla = transformarDatosParrilla(parrillaCsvData);
+            const datosDestacados = transformarDatosDestacados(destacadosCsvData);
 
-        if (datosParrilla && datosParrilla.programacion && Object.keys(datosParrilla.programacion).length > 0) {
-            if (datosParrilla.programacion['Hoy']) renderizarParrillaHorizontal(); else console.warn("Parrilla Horizontal: No hay datos para 'Hoy'.");
-            if (datosParrilla.diasDisponibles) configurarTabsParrillaVertical(); else console.warn("Parrilla Vertical: 'diasDisponibles' no encontrado.");
-        } else {
-            console.warn("Datos de Parrilla vacíos, no definidos o malformados.");
+            // Renderizar componentes con los datos cargados
+            if (datosHero && datosHero.length > 0) renderizarHero(datosHero);
+            else console.warn("Datos del Hero vacíos o no definidos después de cargar CSV.");
+
+            if (datosEstaNoche && datosEstaNoche.programas) renderizarEstaNoche(datosEstaNoche);
+            else console.warn("Datos de Esta Noche vacíos, no definidos o sin 'programas' después de cargar CSV.");
+
+            if (datosParrilla && datosParrilla.programacion && Object.keys(datosParrilla.programacion).length > 0) {
+                if (datosParrilla.programacion['Hoy']) renderizarParrillaHorizontal(datosParrilla);
+                else console.warn("Parrilla Horizontal: No hay datos para 'Hoy' después de cargar CSV.");
+                
+                if (datosParrilla.diasDisponibles) configurarTabsParrillaVertical(datosParrilla);
+                else console.warn("Parrilla Vertical: 'diasDisponibles' no encontrado después de cargar CSV.");
+            } else {
+                console.warn("Datos de Parrilla vacíos, no definidos o malformados después de cargar CSV.");
+            }
+
+            if (datosDestacados && datosDestacados.length > 0) renderizarFiccionDestacada(datosDestacados);
+            else console.warn("Datos Destacados vacíos o no definidos después de cargar CSV.");
+            
+            configurarNavegacion();
+            configurarTimelineHorizontalScroll();
+
+            navigateTo('home');
+
+        } catch (error) {
+            console.error("Error general durante la inicialización de la UI:", error);
+            // Podrías mostrar un mensaje de error al usuario en la página aquí
+            if(appContainer) appContainer.innerHTML = "<p style='text-align:center; padding: 50px; color: var(--text-secondary);'>Error al cargar los datos de la aplicación. Por favor, inténtelo más tarde.</p>";
         }
-
-        if (datosDestacados && datosDestacados.length > 0) renderizarFiccionDestacada(); 
-        else console.warn("Datos Destacados vacíos o no definidos.");
-        
-        configurarNavegacion();
-        configurarTimelineHorizontalScroll();
-
-        navigateTo('home');
     }
 
-    // Llamar a inicializarUI directamente ya que los datos están incrustados
+    // Llamar a inicializarUI
     inicializarUI();
 });
