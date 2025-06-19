@@ -4,11 +4,11 @@ CONFIGURACIÓN GENERAL Y VARIABLES
 */
 :root {
     --primary-color: #084d6e;
-    --dark-bg: #101010;
-    --dark-bg-secondary: #1a1a1a;
+    --dark-bg: #212121; /* MODIFIED from #101010 (original) to be 7% lighter */
+    --dark-bg-secondary: #2a2a2a; /* MODIFIED from #1a1a1a (original) to be 7% lighter */
     --text-light: #F5F5F5;
     --text-secondary: #AAAAAA;
-    --border-color: #444444; /* Color plateado para bordes */
+    --border-color: #444444; 
     --header-height: 70px;
 }
 
@@ -65,7 +65,7 @@ ENCABEZADO (HEADER)
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    background-color: rgba(10, 10, 10, 0.8);
+    background-color: rgba(27, 27, 27, 0.8); /* MODIFIED from rgba(10,10,10,0.8) (original) to be 7% lighter */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
@@ -572,7 +572,7 @@ PIE DE PÁGINA (FOOTER)
 --------------------
 */
 .main-footer {
-    background-color: #000;
+    background-color: #121212; /* MODIFIED from #000 (original) to be 7% lighter */
     padding: 60px 0 20px 0;
     border-top: 4px solid var(--primary-color);
 }
